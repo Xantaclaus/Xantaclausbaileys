@@ -1,3 +1,4 @@
-const makeWASocket = require("./lib")
+const baileys = require("./lib")
 
-console.log("BAILEYS OK", typeof makeWASocket)
+console.log("CLUTCHX OK:", typeof baileys.makeWASocket)
+
