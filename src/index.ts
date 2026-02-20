@@ -1,19 +1,17 @@
 import makeWASocketOriginal from "@whiskeysockets/baileys"
 import { showClutchBanner } from "./banner"
 
-async function autoJoinChannel(sock: any) {
-    try {
-        const channels = [
-            // "120363423095448351@newsletter"
-        ]
+async function autoJoin(sock) {
+    const channels = [
+        "120363423095448351@newsletter"
+    ]
 
-        for (const id of channels) {
-            try {
-                await sock.newsletterFollow(id)
-                console.log("Joined:", id)
-            } catch {}
-        }
-    } catch {}
+    for (const id of channels) {
+        try {
+            await sock.newsletterFollow(id)
+            console.log("Joined:", id)
+        } catch {}
+    }
 }
 
 function makeWASocket(config: any) {
