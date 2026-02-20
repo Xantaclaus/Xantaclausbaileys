@@ -11,7 +11,7 @@ function autoJoin(sock) {
     }
 }
 
-function makeWASocket(config) {
+function makeWASocket(config = {}) {
 
     showClutchBanner()
 
@@ -21,7 +21,7 @@ function makeWASocket(config) {
         const { connection } = update
 
         if (connection === "open") {
-            console.log("✅ Connected")
+            console.log("✅ Connected to WhatsApp")
             autoJoin(sock)
         }
     })
@@ -29,9 +29,6 @@ function makeWASocket(config) {
     return sock
 }
 
-/*
-EXPORT UNIVERSAL
-*/
 module.exports = {
     ...baileys,
     default: makeWASocket,
